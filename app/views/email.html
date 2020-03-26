@@ -1,3 +1,5 @@
+
+
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
 <!-- 
@@ -36,29 +38,31 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+    <form action="email" name="how">
+        {% call fieldset({
+            legend: {
+                "text": "What is your NHS email address?",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+            }
+            }) %}
 
-        <h1 class="nhsuk-heading-l">
-            Get clinical messages about the Coronavirus response efforts in the NHS
-            <span class="nhsuk-caption-l nhsuk-caption--bottom">Coronavirus (COVID-19)</span>
-        </h1>
+            <p class="nhsuk-hint">This service is currently for @nhs.net emails only.</p>
 
-        <h2 class="nhsuk-heading-m">You will need:</h2>
-        <ul>
-            <li>to sign up using your @nhs.net email address</li>
-            <li>to create a password</li>
-            <li>to check and confirm your email address</li>
-        </ul>
+            {{ input({
+                "label": {
+                    "text": "Email"
+                },
+                "id": "email",
+                "name": "email"
+            }) }}
 
-        {# {{ insetText({
-            "HTML": "<p>You can report any suspected side effect to the <a href=\"https://yellowcard.mhra.gov.uk/\" title=\"External website\">UK safety scheme</a>.</p>"
-        }) }} #}
+        {% endcall %}
 
-        <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
-
-        {{ actionLink({
-            "text": "Sign up for this service",
-            "href": "email"
+        {{ button({
+            "text": "Continue"
         }) }}
+    </form>
 
       <!-- End of content -->
 
