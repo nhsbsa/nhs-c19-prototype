@@ -42,39 +42,23 @@
       "href": "javascript:history.go(-1)",
       "text": "Go back"
     }) }}
-    <form action="email" name="how" method="post">
-        {% call fieldset({
-            legend: {
-                "text": "What is your NHS email address?",
-                "classes": "nhsuk-fieldset__legend--l",
-                "isPageHeading": true
-            }
-            }) %}
 
-            <p class="nhsuk-hint">You will need this to sign-in.</p>
-            
-            {{ insetText({
-                "HTML": "<p>This service is currently for @nhs.net emails only</p>",
-                "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5"
-            }) }}
+        <h1>Check your email</h1>
 
-            {{ input({
-                "label": {
-                    "text": "Email"
-                },
-                "id": "email",
-                "name": "email",
-                "classes": "nhsuk-u-width-two-thirds"
-            }) }}
-
-        {% endcall %}
-
-        {{ button({
-            "text": "Continue"
+        <p>We sent an email to gareth.joyce@nhs.net.</p>
+        <p>You will need to verify this email address before you can use this service.</p>
+        
+        {{ details({
+            "text": "What to do if you didn't get an email",
+            "HTML": "
+            <ul>
+                <li>check you typed your email address correctly</li>
+                <li>make sure you used an @nhs.net email address</li>
+            </ul>
+            <p>You might want to <a href=email>try again</a></p>
+            "
         }) }}
-    </form>
-
-      <!-- End of content -->
+        <!-- End of content -->
 
     </div>  
 

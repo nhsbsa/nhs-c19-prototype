@@ -38,41 +38,46 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-    {{ backLink({
+
+        {{ backLink({
       "href": "javascript:history.go(-1)",
       "text": "Go back"
     }) }}
-    <form action="email" name="how" method="post">
+
+    <form action="sign-in" name="how" method="post">
         {% call fieldset({
             legend: {
-                "text": "What is your NHS email address?",
+                "text": "Sign in to get clinical messages about COVID-19 response efforts from NHS.UK",
                 "classes": "nhsuk-fieldset__legend--l",
                 "isPageHeading": true
             }
             }) %}
-
-            <p class="nhsuk-hint">You will need this to sign-in.</p>
-            
-            {{ insetText({
-                "HTML": "<p>This service is currently for @nhs.net emails only</p>",
-                "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5"
-            }) }}
 
             {{ input({
                 "label": {
                     "text": "Email"
                 },
                 "id": "email",
-                "name": "email",
-                "classes": "nhsuk-u-width-two-thirds"
+                "name": "email"
+            }) }}
+
+            {{ input({
+                "label": {
+                    "text": "Password"
+                },
+                "classes": "nhsuk-input--width-10",
+                "id": "pw",
+                "name": "pw"
             }) }}
 
         {% endcall %}
 
         {{ button({
-            "text": "Continue"
+            "text": "Sign in"
         }) }}
     </form>
+
+    <p><a href="email">I need to sign up</a></p>
 
       <!-- End of content -->
 
