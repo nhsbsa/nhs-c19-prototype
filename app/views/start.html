@@ -46,7 +46,7 @@
 
         <h2 class="nhsuk-heading-m">You will need:</h2>
         <ul>
-            <li>to sign up using your @nhs.net email address</li>
+            <li>to create an account using your @nhs.net email address</li>
             <li>to create a password</li>
             <li>to check and confirm your email address</li>
         </ul>
@@ -55,7 +55,10 @@
             "HTML": "<p>You can report any suspected side effect to the <a href=\"https://yellowcard.mhra.gov.uk/\" title=\"External website\">UK safety scheme</a>.</p>"
         }) }} #}
 
-        
+        {{ insetText({
+            "HTML": "<p>This service is currently for NHS staff with @nhs.net emails only</p>",
+            "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
+        }) }}
 
         {{ actionLink({
             "text": "Sign in to this service",
@@ -64,7 +67,7 @@
 
         <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
 
-        <p><a href="email">Sign up for this service</a></p>
+        <p><a href="email">Create an account</a></p>
 
       <!-- End of content -->
 

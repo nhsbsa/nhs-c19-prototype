@@ -47,7 +47,7 @@
     <form action="sign-in" name="how" method="post">
         {% call fieldset({
             legend: {
-                "text": "Sign in to get clinical messages about COVID-19 response efforts from NHS.UK",
+                "text": "Sign in",
                 "classes": "nhsuk-fieldset__legend--l",
                 "isPageHeading": true
             }
@@ -58,7 +58,8 @@
                     "text": "Email"
                 },
                 "id": "email",
-                "name": "email"
+                "name": "email",
+                "classes": "nhsuk-u-width-two-thirds"
             }) }}
 
             {{ input({
@@ -77,7 +78,7 @@
         }) }}
     </form>
 
-    <p><a href="email">I need to sign up</a></p>
+    <p><a href="email">Create an account</a></p>
 
       <!-- End of content -->
 

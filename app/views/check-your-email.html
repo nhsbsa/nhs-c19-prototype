@@ -43,21 +43,17 @@
       "text": "Go back"
     }) }}
 
-        <h1>Check your email</h1>
+        <h1 class="nhsuk-heading-l">Check your email</h1>
 
-        <p>We sent an email to gareth.joyce@nhs.net.</p>
-        <p>You will need to click the link in the email to continue your registration.</p>
-        
-        {{ details({
-            "text": "What to do if you didn't get an email",
-            "HTML": "
-            <ul>
-                <li>check you typed your email address correctly</li>
-                <li>make sure you used an @nhs.net email address</li>
-            </ul>
-            <p>You might want to <a href=email>try again</a></p>
-            "
+        {{ insetText({
+            "HTML": "<p>We sent an email to gareth.joyce@nhs.net</p>",
+            "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-0"
         }) }}
+
+        <p>You will need to click the link in the email to continue your registration.</p>
+
+        <p>If our email doesn't arrive within 5 minutes, check your spam and trash folder, or <a href="email">try again</a>.</p>
+        
         <!-- End of content -->
 
     </div>  
