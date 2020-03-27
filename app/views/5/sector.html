@@ -1,0 +1,85 @@
+
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+        
+
+      <form action="sector" method="post">
+          {% call fieldset({
+              legend: {
+                  "text": "Which sector would you like to get messages about?",
+                  "classes": "nhsuk-fieldset__legend--l",
+                  "isPageHeading": true
+              }
+              }) %}
+
+              {{ checkboxes({
+                "idPrefix": "sector",
+                "name": "sector",
+                "hint": {
+                  "text": "Select all options that are relevant to you."
+                },
+                "items": [
+                  {
+                    "value": "Medical",
+                    "text": "Medical"
+                  },
+                  {
+                    "value": "Clerical",
+                    "text": "Clerical"
+                  },
+                    {
+                    "value": "other",
+                    "text": "Could there be others? Do these even work for the type of message?"
+                  }
+                ]
+              }) }}
+
+          {% endcall %}
+
+          {{ button({
+              "text": "Continue"
+          }) }}
+      </form>
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

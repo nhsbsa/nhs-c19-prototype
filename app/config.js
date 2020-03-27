@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'Get clinical messages about COVID-19 response efforts from NHS.UK',
+  serviceName: 'Get messages about COVID-19 response efforts from NHS.UK',
 
   // Port to run nodemon on locally
   port: 2000,

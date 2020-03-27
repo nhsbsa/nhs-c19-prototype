@@ -12,7 +12,7 @@
 
 <!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  NHS.UK prototype kit
+  This is a prototype
 {% endblock %}
 
 <!-- Breadcrumb goes inside the beforeContent block -->
@@ -27,37 +27,107 @@
 
       <!-- Change the page title here -->
       <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
+        <span class="nhsuk-caption-l nhsuk-caption--top">An NHS.UK prototype</span>
+        <span class="nhsuk-heading-l">{{ serviceName }}</span>
       </h1>
 
-      <!-- Add your content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      {{ details({
+        "text": "Who is this service for?",
+        "HTML": "
+            <div class=nhsuk-panel>
+              <h4>Who do we think this service is for?</h4>
+              <ul>
+                <li>Targeted messages for NHS Staff responding to COVID-19 outbreak? - what are the messages?</li>
+                <li>Any type of support for NHS Staff responding to COVID-19 outbreak? - what is the support?</li>
+                <li>Mental health support for all NHS Staff? - Too narrow?</li>
+                <li>Discounts for all NHS Staff? - are we trying to target everyone? Is everyone involved in the response?</li>
+              </ul>
+            </div>
+        "
+      }) }}
+
+      <hr>
+      
+      <h2 class="nhsuk-heading-m">1. How does a user access this service?</h2>
+      <h3 class="nhsuk-heading-s">a. Email with password</h3>
+      {{ contentsList({
+        items: [
+          {
+            href: "start",
+            text: "Create account journey"
+          },
+          {
+            href: "email-confirmation",
+            text: "Confirm email and create password journey"
+          }
+        ]
+      }) }}
+
+      <h3 class="nhsuk-heading-s">b. Email with link or code</h3>
+      {{ contentsList({
+        items: [
+          {
+            href: "2/start",
+            text: "Magic link in email journey"
+          },
+          {
+            href: "3/email-confirmation",
+            text: "Code in email journey"
+          }
+        ]
+      }) }}
 
       <hr />
-      <h2>How does a user access this service?</h2>
-      <h3>Email with password?</h3>
-      <p><a href="start">Create account journey</a></p>
-      <p><a href="email-confirmation">Confirm email and create password journey</a></p>
 
-      <h3>Email with Link or Code?</h3>
-      <p><a href="2/start">Magic link in email journey</a></p>
-      <p><a href="3/start">Code in email journey</a></p>
+      <h2 class="nhsuk-heading-m">2. How does a user receive messages?</h2>
+      <h3 class="nhsuk-heading-s">a. Tell us how they want the messages to be sent</h3>
+      {{ contentsList({
+        items: [
+          {
+            href: "4/push",
+            text: "Set preferred messages journey"
+          }
+        ]
+      }) }}
 
-      <hr />
+      <h3 class="nhsuk-heading-s">b. We tell them how</h3>
+      <p>to add</p>
 
-      <h2>How does a user set their messaging preferences?</h2>
-      <p><a href="4/push">Set preferred messages</a></p>
+      <hr>
 
-      <div class="nhsuk-panel">
-      <h4>What do we think this service is for?</h4>
-      <ul>
-        <li>Targeted messages for NHS Staff responding to COVID-19 outbreak? - what are the messages?</li>
-        <li>Any type of support for NHS Staff responding to COVID-19 outbreak? - what is the support?</li>
-        <li>Mental health support for all NHS Staff? - Too narrow?</li>
-        <li>Discounts for all NHS Staff? - are we trying to target everyone? Is everyone involved in the response?</li>
-      </ul>
-      </div>
+      <h2 class="nhsuk-heading-m">3. How does a user tell us what type of messages they want to receive?</h2>
+
+      <h3 class="nhsuk-heading-s">a. Tell us by location</h3>
+      {{ contentsList({
+        items: [
+          {
+            href: "5/region",
+            text: "Set region journey"
+          },
+          {
+            href: "5/trust",
+            text: "By Trust?"
+          }
+        ]
+      }) }}
+
+      <h3 class="nhsuk-heading-s">b. Tell us by job</h3>
+      {{ contentsList({
+        items: [
+          {
+            href: "5/role",
+            text: "By Role?"
+          },
+          {
+            href: "5/sector",
+            text: "By Sector?"
+          }
+        ]
+      }) }}
+
+      <hr>
+
+      <p> Built with NHS.UK prototype kit <span class="nhsuk-caption-l nhsuk-caption--bottom">Version {{version}}</span></p>
 
       <!-- End of content -->
 
