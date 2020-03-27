@@ -38,26 +38,36 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+    {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+    <form action="mobile-number" method="post">
+        {% call fieldset({
+            legend: {
+                "text": "What is your mobile number?",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+            }
+            }) %}
 
-        <h1 class="nhsuk-heading-l">Messages page</h1>
-        
-        <p>What goes in here? What do the messages look like?</p>
+            {{ input({
+                "label": {
+                    "text": "Enter your mobile telephone number"
+                },
+                "id": "mobile",
+                "name": "mobile",
+                "classes": "nhsuk-u-width-two-thirds"
+            }) }}
 
-        <h2 class="nhsuk-heading-m">April 2020</h2>
+        {% endcall %}
 
-        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible">
+        {{ button({
+            "text": "Continue"
+        }) }}
+    </form>
 
-        <h2 class="nhsuk-heading-m">March 2020</h2>
-
-        <div class="nhsuk-panel nhsuk-u-margin-top-0">
-            <h3 class="nhsuk-heading-s">
-                <span class="nhsuk-caption-m nhsuk-caption--top nhsuk-u-font-size-16">31 March 2020</span>
-                <a href="#">Title of message</a>
-            </h3>
-            <p>Body of message</p>
-        </div>
-        
-        <!-- End of content -->
+      <!-- End of content -->
 
     </div>  
 

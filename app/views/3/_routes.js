@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.post('/code', function (req, res) {
-    res.redirect('messages');
+    res.redirect('/messages');
 })
 
 

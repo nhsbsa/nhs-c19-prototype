@@ -38,38 +38,52 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+        {{ backLink({
+      "href": "javascript:history.go(-1)",
+      "text": "Go back"
+    }) }}
+    
+        <h2>Your messages</h2>
 
-        <h1 class="nhsuk-heading-l">Messages page</h1>
-
-        <p>You are currently getting these messages through email and text message. <a href="/preferences">Change</a></p>
-        <hr />
-        
-        <h2 class="nhsuk-heading-m">April 2020</h2>
-        {% for i in range(0, 2) -%}
-          <div class="nhsuk-panel nhsuk-u-margin-top-0">
-              <h3 class="nhsuk-heading-s">
-                  <span class="nhsuk-caption-m nhsuk-caption--top nhsuk-u-font-size-16">31 March 2020</span>
-                  <a href="#">Title of message</a>
-              </h3>
-              <p>Body of message</p>
-          </div>
-        {%- endfor %}
-
-        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible">
-
-        <h2 class="nhsuk-heading-m">March 2020</h2>
-
-        {% for i in range(0, 5) -%}
-        <div class="nhsuk-panel nhsuk-u-margin-top-0">
-            <h3 class="nhsuk-heading-s">
-                <span class="nhsuk-caption-m nhsuk-caption--top nhsuk-u-font-size-16">31 March 2020</span>
-                <a href="#">Title of message</a>
-            </h3>
-            <p>Body of message</p>
-        </div>
-        {%- endfor %}
-        
-        <!-- End of content -->
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Get messages by email"
+              },
+              value: {
+                text: "Yes – sent to gareth.joyce@nhs.net"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/4/preferences",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Get messages by telephone"
+              },
+              value: {
+                text: "Yes – sent to 07890 123456"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/4/preferences",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      <!-- End of content -->
 
     </div>  
 
