@@ -1,0 +1,72 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+        <h1 class="nhsuk-heading-l">
+            Get clinical messages about the Coronavirus response efforts in the NHS
+            <span class="nhsuk-caption-l nhsuk-caption--bottom">Coronavirus (COVID-19)</span>
+        </h1>
+
+        <h2 class="nhsuk-heading-m">This is a service for NHS staff.</h2>
+
+        <h2 class="nhsuk-heading-m">You will need:</h2>
+        <ul>
+            <li>to check your @nhs.net email address for a code</li>
+            <li>to set your preferred way to get messages</li>
+        </ul>
+
+        {# {{ insetText({
+            "HTML": "<p>You can report any suspected side effect to the <a href=\"https://yellowcard.mhra.gov.uk/\" title=\"External website\">UK safety scheme</a>.</p>"
+        }) }} #}
+
+        {{ insetText({
+            "HTML": "<p>This service is currently for NHS staff with @nhs.net emails only</p>",
+            "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
+        }) }}
+
+        {{ actionLink({
+            "text": "Sign in to this service",
+            "href": "email"
+        }) }}
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
