@@ -28,4 +28,8 @@ router.post('/mobile-number', function (req, res) {
     res.redirect('check');
 })
 
+router.post('/details', function (req, res) {
+    res.redirect('check');
+})
+
 module.exports = router;

@@ -1,0 +1,95 @@
+
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="details" method="post">
+
+        {% call fieldset({
+            legend: {
+                "text": "Enter your contact details",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+            }
+        }) %}
+
+            {{ insetText({
+                "HTML": "<p>This service is currently for @nhs.net emails only</p>",
+                "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
+            }) }}
+
+            {{ input({
+                "label": {
+                    "text": "Enter your email"
+                },
+                "hint": {
+                    "html": "We'll send you updates by email. You'll need to confirm your email address now, make sure only you can access it."
+                },
+                "id": "email",
+                "name": "email",
+                "classes": "nhsuk-u-width-two-thirds"
+            }) }}
+
+            {{ input({
+                "label": {
+                    "text": "Enter your mobile number"
+                },
+                "hint": {
+                    "text": "We'll send you updates by text messages."
+                },
+                "id": "mobile",
+                "name": "mobile",
+                "classes": "nhsuk-u-width-two-thirds"
+            }) }}
+
+        {% endcall %}
+
+        <p><a href="bypass">Continue without a mobile number</a></p>
+
+        {{ button({
+            "text": "Continue"
+        }) }}
+    </form>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
