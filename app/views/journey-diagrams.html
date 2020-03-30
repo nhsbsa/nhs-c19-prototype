@@ -1,0 +1,41 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  This is a prototype
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+        <div class="u-ratio u-ratio--16x9">
+            <iframe width="960" height="540" src="https://miro.com/app/embed/o9J_kuDbKg8=/?&pres=1&animate=1&autoplay=yep" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+
+        <br />
+        <p>Use the plus and minus to zoom. You can make the map full screen by using the arrows, use <kbd>Esc</kbd> (the escape key)
+        to exit the full screen view.</p>
+    </div>
+  </div>
+{% endblock %}

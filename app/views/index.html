@@ -22,6 +22,7 @@
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -31,20 +32,7 @@
         <span class="nhsuk-heading-l">{{ serviceName }}</span>
       </h1>
 
-      {{ details({
-        "text": "Who is this service for?",
-        "HTML": "
-            <div class=nhsuk-panel>
-              <h4>Who do we think this service is for?</h4>
-              <ul>
-                <li>Targeted messages for NHS Staff responding to COVID-19 outbreak? - what are the messages?</li>
-                <li>Any type of support for NHS Staff responding to COVID-19 outbreak? - what is the support?</li>
-                <li>Mental health support for all NHS Staff? - Too narrow?</li>
-                <li>Discounts for all NHS Staff? - are we trying to target everyone? Is everyone involved in the response?</li>
-              </ul>
-            </div>
-        "
-      }) }}
+      <p><a href="journey-diagrams">View Miro user journey diagrams</a></p>
 
       <hr>
       
@@ -108,10 +96,40 @@
 
       <hr>
 
+      <h2 class="nhsuk-heading-m">4. How does a user tell us what they need?</h2>
+      {{ contentsList({
+        items: [
+          {
+            href: "7/messages",
+            text: "a. Tell us from the messages page"
+          }
+        ]
+      }) }}
+
+      <hr>
+      
+      {{ details({
+        "text": "Who is this service for?",
+        "HTML": "
+            <div class=nhsuk-panel>
+              <h4>Who do we think this service is for?</h4>
+              <ul>
+                <li>Targeted messages for NHS Staff responding to COVID-19 outbreak? - what are the messages?</li>
+                <li>Any type of support for NHS Staff responding to COVID-19 outbreak? - what is the support?</li>
+                <li>Mental health support for all NHS Staff? - Too narrow?</li>
+                <li>Discounts for all NHS Staff? - are we trying to target everyone? Is everyone involved in the response?</li>
+              </ul>
+            </div>
+        "
+      }) }}
+
+      <hr>
+
       <p> Built with NHS.UK prototype kit <span class="nhsuk-caption-l nhsuk-caption--bottom">Version {{version}}</span></p>
 
       <!-- End of content -->
 
     </div>
+
   </div>
 {% endblock %}
