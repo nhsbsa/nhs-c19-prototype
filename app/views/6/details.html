@@ -49,6 +49,10 @@
             }
         }) %}
 
+          {{ hint({
+              "text": "We'll use these details to send you messages."
+          }) }}
+
             {{ insetText({
                 "HTML": "<p>This service is currently for @nhs.net emails only</p>",
                 "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
@@ -59,7 +63,7 @@
                     "text": "Enter your email"
                 },
                 "hint": {
-                    "html": "We'll send you updates by email. You'll need to confirm your email address now, make sure only you can access it."
+                    "html": "You'll need to confirm your email address now, <br>make sure only you can access it."
                 },
                 "id": "email",
                 "name": "email",
@@ -69,9 +73,6 @@
             {{ input({
                 "label": {
                     "text": "Enter your mobile number"
-                },
-                "hint": {
-                    "text": "We'll send you updates by text messages."
                 },
                 "id": "mobile",
                 "name": "mobile",

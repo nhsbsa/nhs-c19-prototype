@@ -49,85 +49,59 @@
       <hr>
       
       <h2 class="nhsuk-heading-m">1. How does a user access this service?</h2>
-      <h3 class="nhsuk-heading-s">a. Email with password</h3>
       {{ contentsList({
         items: [
           {
-            href: "start",
-            text: "Create account journey"
+            href: "1/start",
+            text: "a. Create an account and sign-in with a password"
           },
-          {
-            href: "email-confirmation",
-            text: "Confirm email and create password journey"
-          }
-        ]
-      }) }}
-
-      <h3 class="nhsuk-heading-s">b. Email with link or code</h3>
-      {{ contentsList({
-        items: [
           {
             href: "2/start",
-            text: "Magic link in email journey"
+            text: "b. Magic link in email journey"
           },
           {
-            href: "3/email-confirmation",
-            text: "Code in email journey"
+            href: "3/start",
+            text: "c. Code in email journey"
           }
         ]
       }) }}
 
       <hr />
 
-      <h2 class="nhsuk-heading-m">2. How does a user receive messages?</h2>
-      <h3 class="nhsuk-heading-s">a. Tell us how they want the messages to be sent</h3>
+      <h2 class="nhsuk-heading-m">2. How does a user get messages?</h2>
       {{ contentsList({
         items: [
           {
-            href: "4/start",
-            text: "Set preferred messages journey"
-          }
-        ]
-      }) }}
-
-      <h3 class="nhsuk-heading-s">b. We tell them how</h3>
-      {{ contentsList({
-        items: [
+            href: "4/preferences",
+            text: "a. Set message preferrences – trigger after first sign-in"
+          },
           {
             href: "6/start",
-            text: "Capture contact details journey"
+            text: "b. Sign-in and opt-in contact details journey"
           }
         ]
       }) }}
 
       <hr>
 
-      <h2 class="nhsuk-heading-m">3. How does a user tell us what type of messages they want to receive?</h2>
-
-      <h3 class="nhsuk-heading-s">a. Tell us by location</h3>
+      <h2 class="nhsuk-heading-m">3. How does a user tell us what the messages contain?</h2>
       {{ contentsList({
         items: [
           {
             href: "5/region",
-            text: "Set region journey"
+            text: "a. Set message content by region – trigger after first sign-in"
           },
           {
             href: "5/trust",
-            text: "By Trust?"
-          }
-        ]
-      }) }}
-
-      <h3 class="nhsuk-heading-s">b. Tell us by job</h3>
-      {{ contentsList({
-        items: [
+            text: "b. By trust"
+          },
           {
             href: "5/role",
-            text: "By Role?"
+            text: "c. By role"
           },
           {
             href: "5/sector",
-            text: "By Sector?"
+            text: "d. By sector"
           }
         ]
       }) }}

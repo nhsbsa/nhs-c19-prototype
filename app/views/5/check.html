@@ -38,45 +38,40 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-        {{ backLink({
-      "href": "javascript:history.go(-1)",
-      "text": "Go back"
-    }) }}
-    
-        <h2>Your message preferences</h2>
+        <h2>Check your message preferences</h2>
 
         {{ summaryList({
           rows: [
             {
               key: {
-                text: "Email"
+                text: "Get messages by email"
               },
               value: {
-                text: "Sending to gareth.joyce@nhs.net"
+                text: "Yes – sent to gareth.joyce@nhs.net"
               },
               actions: {
                 items: [
                   {
-                    href: "/4/preferences",
+                    href: "#",
                     text: "Change",
-                    visuallyHiddenText: "name"
+                    visuallyHiddenText: "email"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "Telephone"
+                text: "Get messages by text message"
               },
               value: {
-                text: "Sending to 07890 123456"
+                text: "Yes – sent to 07890 123456"
               },
               actions: {
                 items: [
                   {
-                    href: "/4/preferences",
+                    href: "#",
                     text: "Change",
-                    visuallyHiddenText: "date of birth"
+                    visuallyHiddenText: "message"
                   }
                 ]
               }
@@ -93,7 +88,24 @@
                   {
                     href: "/5/region",
                     text: "Change",
-                    visuallyHiddenText: "date of birth"
+                    visuallyHiddenText: "region"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Sector"
+              },
+              value: {
+                text: "Medical"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/5/sector",
+                    text: "Change",
+                    visuallyHiddenText: "sector"
                   }
                 ]
               }
@@ -101,6 +113,8 @@
           ]
         }) }}
       <!-- End of content -->
+
+      <p><a href="messages">Save and view messages</a></p>
 
     </div>  
 

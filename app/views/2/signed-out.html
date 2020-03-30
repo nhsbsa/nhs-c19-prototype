@@ -1,5 +1,3 @@
-
-
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
 <!-- 
@@ -38,44 +36,9 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-    {{ backLink({
-      "href": "javascript:history.go(-1)",
-      "text": "Go back"
-    }) }}
-    <form action="email" name="how" method="post">
-        {% call fieldset({
-            legend: {
-                "text": "What is your NHS email address?",
-                "classes": "nhsuk-fieldset__legend--l",
-                "isPageHeading": true
-            }
-            }) %}
 
-            {{ insetText({
-                "HTML": "<p>This service is currently for @nhs.net emails only</p>",
-                "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
-            }) }}
-
-            {{ input({
-                "label": {
-                    "text": "Enter your email"
-                },
-                "hint": {
-                    "text": "Make sure only you can access it, you will use this to sign-in."
-                },
-                "id": "email",
-                "name": "email",
-                "classes": "nhsuk-u-width-two-thirds"
-            }) }}
-
-        {% endcall %}
-
-        {{ button({
-            "text": "Continue"
-        }) }}
-    </form>
-
-      <!-- End of content -->
+        <h1 class="nhsuk-heading-l">You have signed out</h1>
+        <p><a href="email">Sign back in.</a></p>
 
     </div>  
 

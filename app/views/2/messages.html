@@ -29,33 +29,52 @@
       </p>
     </div>
   </div>
+  <div class="nhsuk-width-container">
+    <p><a href="signed-out">Sign out of this service</a></p>
+  </div>
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+  
 
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-    {{ backLink({
-      "href": "javascript:history.go(-1)",
-      "text": "Go back"
-    }) }}
 
-        <h1 class="nhsuk-heading-l">Check your email</h1>
+        <h1 class="nhsuk-heading-l">Your messages</h1>
+        <hr>
+        
+        <h2 class="nhsuk-heading-m">April 2020</h2>
+        {% for i in range(0, 2) -%}
+          <div class="nhsuk-panel nhsuk-u-margin-top-0">
+              <h3 class="nhsuk-heading-s">
+                  <span class="nhsuk-caption-m nhsuk-caption--top nhsuk-u-font-size-16">31 March 2020</span>
+                  <a href="#">Title of message</a>
+              </h3>
+              <p>Body of message</p>
+          </div>
+        {%- endfor %}
 
-        {{ insetText({
-            "HTML": "<p>We sent an email to gareth.joyce@nhs.net</p>",
-            "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-0"
-        }) }}
+        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible">
 
-        <p>You will need to click the link in the email to continue your registration.</p>
+        <h2 class="nhsuk-heading-m">March 2020</h2>
 
-        <p>If our email doesn't arrive within 5 minutes, check your spam and trash folder, or <a href="email">try again</a>.</p>
+        {% for i in range(0, 5) -%}
+        <div class="nhsuk-panel nhsuk-u-margin-top-0">
+            <h3 class="nhsuk-heading-s">
+                <span class="nhsuk-caption-m nhsuk-caption--top nhsuk-u-font-size-16">31 March 2020</span>
+                <a href="#">Title of message</a>
+            </h3>
+            <p>Body of message</p>
+        </div>
+        {%- endfor %}
         
         <!-- End of content -->
 
+        <hr>
+        <p><a href="signed-out">Sign out of this service</a></p>
     </div>  
 
   </div>

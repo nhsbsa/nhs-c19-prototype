@@ -1,5 +1,3 @@
-
-
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
 <!-- 
@@ -39,48 +37,8 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        {{ backLink({
-      "href": "javascript:history.go(-1)",
-      "text": "Go back"
-    }) }}
-
-    <form action="sign-in" name="how" method="post">
-        {% call fieldset({
-            legend: {
-                "text": "Sign in",
-                "classes": "nhsuk-fieldset__legend--l",
-                "isPageHeading": true
-            }
-            }) %}
-
-            {{ input({
-                "label": {
-                    "text": "Email"
-                },
-                "id": "email",
-                "name": "email",
-                "classes": "nhsuk-u-width-two-thirds"
-            }) }}
-
-            {{ input({
-                "label": {
-                    "text": "Password"
-                },
-                "classes": "nhsuk-input--width-10",
-                "id": "pw",
-                "name": "pw"
-            }) }}
-
-        {% endcall %}
-
-        {{ button({
-            "text": "Sign in"
-        }) }}
-    </form>
-
-    <p><a href="email">Create an account</a></p>
-
-      <!-- End of content -->
+        <h1 class="nhsuk-heading-l">You have signed out</h1>
+        <p><a href="email">Sign back in.</a></p>
 
     </div>  
 

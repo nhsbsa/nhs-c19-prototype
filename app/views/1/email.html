@@ -38,28 +38,42 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+    <form action="email" method="post">
+        {% call fieldset({
+            legend: {
+                "text": "What is your NHS email address?",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+            }
+            }) %}
 
-        <h1 class="nhsuk-heading-l">Check your email</h1>
+            {{ insetText({
+                "HTML": "<p>This service is currently for @nhs.net emails only</p>",
+                "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-2"
+            }) }}
 
-        {{ insetText({
-            "HTML": "<p>We sent an email to gareth.joyce@nhs.net</p>",
-            "classes": "nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-0"
+            {{ input({
+                "label": {
+                    "text": "Enter your email"
+                },
+                "hint": {
+                    "text": "Make sure only you can access it, you will use this to sign-in."
+                },
+                "id": "email",
+                "name": "email",
+                "classes": "nhsuk-u-width-two-thirds"
+            }) }}
+
+        {% endcall %}
+
+        {{ button({
+            "text": "Continue"
         }) }}
+    </form>
 
-        <p>You will need to click the link in the email to sign into this service.</p>
-
-        <p>If our email doesn't arrive within 5 minutes, check your spam and trash folder, or <a href="email">try again</a>.</p>
-        
-        <!-- End of content -->
-        <p><a href="email-confirmation" class="prototype-signpost">See email mock-up</a></p>
+      <!-- End of content -->
 
     </div>  
 
   </div>
-
-<script>
-window.setTimeout(function(){
-    window.location.href = "email-confirmation";
-}, 10000);
-</script>
 {% endblock %}
