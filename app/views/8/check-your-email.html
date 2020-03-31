@@ -13,6 +13,17 @@
   Content page example - NHS.UK prototype kit
 {% endblock %}
 
+{% block header %}
+  {{ header({
+    "service": {
+        "name": data['feedback-service-name'],
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
 
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->

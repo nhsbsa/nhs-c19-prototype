@@ -13,5 +13,6 @@ router.use('/4/', require('./views/4/_routes'))
 router.use('/5/', require('./views/5/_routes'))
 router.use('/6/', require('./views/6/_routes'))
 router.use('/7/', require('./views/7/_routes'))
+router.use('/8/', require('./views/8/_routes'))
 
 module.exports = router;

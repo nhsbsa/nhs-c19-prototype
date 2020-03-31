@@ -18,6 +18,18 @@
 {% block beforeContent %}
 {% endblock %}
 
+{% block header %}
+  {{ header({
+    "service": {
+        "name": data['feedback-service-name'],
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
@@ -26,9 +38,30 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <h1>Thank you</h1>
-        <p>Your feedback will help us to provide the NHS Workforce with better information.</p>
-        <p><a href="messages">Go back to all messages</a></p>
+    <form action="job" method="post">
+        {% call fieldset({
+            legend: {
+                "text": "What is your job in the NHS?",
+                "classes": "nhsuk-fieldset__legend--l",
+                "isPageHeading": true
+            }
+            }) %}
+
+            {{ input({
+                "label": {
+                    "text": "Enter your job title, for example: Junior Doctor"
+                },
+                "id": "job",
+                "name": "job",
+                "classes": "nhsuk-u-width-two-thirds"
+            }) }}
+
+        {% endcall %}
+
+        {{ button({
+            "text": "Continue"
+        }) }}
+    </form>
 
       <!-- End of content -->
 

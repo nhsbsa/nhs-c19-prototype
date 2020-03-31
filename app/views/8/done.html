@@ -18,6 +18,18 @@
 {% block beforeContent %}
 {% endblock %}
 
+{% block header %}
+  {{ header({
+    "service": {
+        "name": data['feedback-service-name'],
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
 <!-- Your page content goes inside the content block -->
 <!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
@@ -27,8 +39,8 @@
     <div class="nhsuk-grid-column-two-thirds">
 
         <h1>Thank you</h1>
-        <p>Your feedback will help us to provide the NHS Workforce with better information.</p>
-        <p><a href="messages">Go back to all messages</a></p>
+        <p>The information you provided will help the NHS Workforce save lives.</p>
+        <p><a href="https://www.nhs.uk/coronavirus">Read the latest Coronavirus advice from NHS.UK</a></p>
 
       <!-- End of content -->
 

@@ -44,62 +44,83 @@
         "text": "Go back"
       }) }} 
 
-      <form action="region" method="post">
-          {% call fieldset({
-              legend: {
-                  "text": "Which region would you like to get messages about?",
-                  "classes": "nhsuk-fieldset__legend--l",
-                  "isPageHeading": true
-              }
-              }) %}
+<form action="region" method="post">
 
-              {{ checkboxes({
-                "idPrefix": "region",
-                "name": "region",
-                "hint": {
-                  "text": "Select all options that are relevant to you."
-                },
-                "items": [
-                  {
-                    "value": "North West",
-                    "text": "North West"
-                  },
-                  {
-                    "value": "North East and Yorkshire",
-                    "text": "North East and Yorkshire"
-                  },
-                  {
-                    "value": "Midlands",
-                    "text": "Midlands"
-                  },
-                  {
-                    "value": "South West",
-                    "text": "South West"
-                  },
-                  {
-                    "value": "South East",
-                    "text": "South East"
-                  },
-                  {
-                    "value": "East of England",
-                    "text": "East of England"
-                  },
-                  {
-                    "value": "London",
-                    "text": "London"
-                  }
-                ]
-              }) }}
+<div class="nhsuk-form-group">
+  {% call fieldset({
+      legend: {
+          "text": "Which region would you like to get messages about?",
+          "classes": "nhsuk-fieldset__legend--l",
+          "isPageHeading": true
+      }
+      }) %}
+         
+ <div class="nhsuk-checkboxes">
 
-          {% endcall %}
+  <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-1" name="region" type="checkbox" value="North West" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-1">North West</label>
+  </div>
+     <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-2" name="region" type="checkbox" value="North East and Yorkshire" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-2">North East and Yorkshire</label>
+  </div>
+     <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-3" name="region" type="checkbox" value="Midlands" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-3">Midlands</label>
+  </div>
+     <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-4" name="region" type="checkbox" value="South West" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-4">South West</label>
+  </div>
+     <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-5" name="region" type="checkbox" value="South East" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-5">South East</label>
+  </div>
 
-          {{ button({
-              "text": "Save and view messages"
-          }) }}
-      </form>
+   <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-6" name="region" type="checkbox" value="East of England" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-6">East of England</label>
+  </div>
+
+  <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk" id="region-7" name="region" type="checkbox" value="London" onclick="uncheckIdk()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-7">London</label>
+  </div>
+
+  <p class="nhsuk-u-margin-top-2 nhsuk-u-margin-bottom-2">– or –</p>
+  <div class="nhsuk-checkboxes__item">
+    <input class="nhsuk-checkboxes__input chk-idk" id="region-8" name="region" type="checkbox" value="email" onclick="uncheckAll()">
+    <label class="nhsuk-label nhsuk-checkboxes__label" for="region-8">All NHS England regions</label>
+  </div>
+</div>
+
+ {% endcall %}
+</div>
+ {{ button({
+      "text": "Save and view messages"
+  }) }}
+</form>
+
       <!-- End of content -->
 
-    </div>  
+</div>
 
-  </div>
+</div>
+
+<script>
+function uncheckAll() {
+  var inputs = document.querySelectorAll('.chk');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
+function uncheckIdk() {
+  var inputs = document.querySelectorAll('.chk-idk');
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].checked = false;
+  }
+}
+</script>
+
 {% endblock %}

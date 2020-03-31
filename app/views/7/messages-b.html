@@ -1,0 +1,90 @@
+
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        {# <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong> #}
+        <span class="app-phase-banner__text">Can you answer some questions about your visit today? <a href="https://www.smartsurvey.co.uk/s/N7SPBG/">Take survey</a>.</span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <h1 class="nhsuk-heading-l">All messages</h1>
+
+        <p>You are currently getting these messages through <strong>email and text message</strong>.
+        <br><a href="#">Change</a></p>
+
+        <hr />
+
+        <h2 class="nhsuk-heading-m">April 2020</h2>
+        {% for i in range(0, 2) -%}
+          <div class="nhsuk-panel nhsuk-u-margin-top-0">
+              <h3 class="nhsuk-heading-s">
+                <a href="#">Title of message</a>
+                <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-font-size-16">31 March 2020</span> 
+              </h3>
+              <p>Body of message</p>
+          </div>
+        {%- endfor %}
+
+        <hr class="nhsuk-section-break nhsuk-section-break--xl nhsuk-section-break--visible">
+
+        <h2 class="nhsuk-heading-m">March 2020</h2>
+
+        {% for i in range(0, 3) -%}
+        <div class="nhsuk-panel nhsuk-u-margin-top-0">
+            <h3 class="nhsuk-heading-s">
+              <a href="#">Title of message</a>
+              <span class="nhsuk-caption-m nhsuk-caption--bottom nhsuk-u-font-size-16">31 March 2020</span>  
+            </h3>
+            <p>Body of message</p>
+        </div>
+        {%- endfor %}
+
+        <hr>
+        <div class="nhsuk-panel nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4">
+          <h2 class="nhsuk-heading-m">What do you need?</h2>
+          <p>We’d welcome your feedback. You can help shape how this service works. Can you answer some questions about your visit today?</p>
+          {{ actionLink({
+            "text": "Take survey",
+            "href": "https://www.smartsurvey.co.uk/s/N7SPBG/"
+          }) }}
+        </div>
+
+        <!-- End of content -->
+
+        <hr>
+        <p><a href="#">Sign out of this service</a></p>
+    </div>  
+
+  </div>
+{% endblock %}

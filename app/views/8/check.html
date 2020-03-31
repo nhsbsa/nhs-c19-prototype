@@ -1,0 +1,111 @@
+
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+{% block header %}
+  {{ header({
+    "service": {
+        "name": data['feedback-service-name'],
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ backLink({
+        "href": "javascript:history.go(-1)",
+        "text": "Go back"
+      }) }}
+
+        <h2>Check answers</h2>
+
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "What is your job in the NHS?"
+              },
+              value: {
+                text: "Junior Doctor"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "job",
+                    text: "Change",
+                    visuallyHiddenText: "job"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Which region are you currently working in?"
+              },
+              value: {
+                text: "London"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "region",
+                    text: "Change",
+                    visuallyHiddenText: "region"
+                  }
+                ]
+              }
+            },
+            {
+              classes: "fff",
+              key: {
+                text: "What do you need help with?"
+              },
+              value: {
+                text: "The personal protective equipment at my hospital is insufficient. We only have masks and plastic aprons and I don't feel
+                protected enough to be able to perform my duties.",
+                classes: "fff"
+              },
+              actions: {
+                classes: "fff",
+                items: [
+                  {
+                    href: "help",
+                    text: "Change",
+                    visuallyHiddenText: "help"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      <!-- End of content -->
+
+      {{ insetText({
+        "HTML": "<p><a href=done>Save answers and finish</a></p>"
+      }) }}
+
+    </div>  
+
+  </div>
+{% endblock %}
